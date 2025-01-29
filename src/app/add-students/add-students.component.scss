@@ -2,13 +2,20 @@ mat-card {
     height: 92vh;
     overflow: hidden;
 }
-
+mat-form-field {
+    width: 100%;
+  }
+.form-field{
+    margin-right: 20px;
+    width: 25%;
+}
 .d-flex {
     margin-top: 10px;
     display: flex;
-    justify-content: space-around;
 }
-
+.mt-10{
+    margin-top: 10px;
+}
 .text-center {
     text-align: center;
 }

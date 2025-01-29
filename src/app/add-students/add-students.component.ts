@@ -29,18 +29,26 @@ export class AddStudentsComponent implements OnInit {
   ngOnInit(): void {
     this.studentForm = this.fb.group({
       name: new FormControl('', [Validators.required]),
+      phone: new FormControl('', [Validators.required]),
+      postalCode: new FormControl('', [Validators.required]),
+      dob: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required, Validators.email]),
       country: new FormControl('', [Validators.required]),
       state: new FormControl('', [Validators.required]),
+      city: new FormControl('', [Validators.required]),
+      street: new FormControl('', [Validators.required]),
       passport: new FormControl('', [Validators.required]),
       fitness: new FormControl('', [Validators.required]),
       course: new FormControl('', [Validators.required]),
       subject: new FormControl('', [Validators.required]),
-      date: new FormControl('', [Validators.required]),
+      subjects: new FormControl('', [Validators.required]),
     })
   }
 
 
   onFormSubmit(): void{
+    // id: number,
+
     console.log(this.studentForm)
   }
 
