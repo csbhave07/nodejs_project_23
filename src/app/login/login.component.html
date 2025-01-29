@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="content-wrapper">
+        <div class="left-side">
+            <div class="image">
+                <img src="/images/login-image.jpg" alt="image">
+            </div>
+        </div>
+        <div class="right-side">
+            <mat-card>
+                <h2>Authentication</h2>
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <div class="form-field">
+                        <mat-form-field class="full-width">
+                            <mat-label>Username</mat-label>
+                            <input matInput type="text" formControlName="username">
+                        </mat-form-field>
+                    </div>
+
+                    <div class="form-field">
+                        <mat-form-field class="full-width">
+                            <mat-label>Password</mat-label>
+                            <input matInput type="password" formControlName="password">
+                        </mat-form-field>
+                    </div>
+
+                    <div class="actions">
+                        <button type="submit" class="btn btn-primary" mat-flat-button [disabled]="!loginForm.valid">Sign
+                            In</button>
+                        <a class="btn" mat-stroked-button [routerLink]="['/signup']">Sign Up</a>
+                    </div>
+                </form>
+            </mat-card>
+        </div>
+    </div>
+</div>

@@ -9,6 +9,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { studentReducer } from './state/student/student.reducer';
 import { provideEffects } from '@ngrx/effects';
 import { StudentEffects } from './state/student/student.effects';
+import { provideRouterStore, routerReducer } from '@ngrx/router-store';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -16,10 +17,13 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideAnimationsAsync(),
     provideEffects(StudentEffects),
-    provideStore(),
-    provideState({ name: 'studentRecords', reducer: studentReducer }),
+    provideStore({
+      route: routerReducer
+    }),
+    provideState({ name: 'students', reducer: studentReducer }),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
     provideHttpClient(),
-    provideEffects()
+    provideEffects(),
+    provideRouterStore()
 ]
 };

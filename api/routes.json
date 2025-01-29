@@ -1,3 +1,4 @@
 {
+  "/api/login": "/login",
   "/api/studentRecords": "/studentRecords"
 }
