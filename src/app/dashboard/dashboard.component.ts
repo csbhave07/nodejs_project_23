@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { StudentTableComponent } from "../student-table/student-table.component";
 
 @Component({
   selector: 'app-dashboard',
-  imports: [],
+  imports: [StudentTableComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })

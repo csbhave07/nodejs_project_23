@@ -1,21 +1,9 @@
+import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
+
 import { IStudentRecords } from "./student.modal";
 
-export const initialState: { studentRecords: IStudentRecords[] } = { 
-    studentRecords: [
-    {
-        name: 'Chinmay Bhave',
-        city: 'Pune',
-        country: 'India',
-        subject: 'Maharashtra',
-        passportDeclaration: 'Yes',
-        fitnessDeclaration: 'Yes',
-        courseName: 'Match',
-        date: '13-12-1994',
-        state: 'Maharashtra',
-        subjects: 'Maths',
-        street: '5th street',
-        email: 'cs@gmail.com',
-        phone: '1234567890',
-        postalCode: 12345
-    }
-] };
+export interface StudentsState extends EntityState<IStudentRecords> { };
+
+export const adapter: EntityAdapter<IStudentRecords> = createEntityAdapter<IStudentRecords>();
+
+export const initialState: StudentsState = adapter.getInitialState();
