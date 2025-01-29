@@ -1,4 +1,4 @@
-import { ApplicationConfig, provideZoneChangeDetection, isDevMode } from '@angular/core';
+import { ApplicationConfig, provideZoneChangeDetection, isDevMode, importProvidersFrom } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
@@ -10,6 +10,7 @@ import { studentReducer } from './state/student/student.reducer';
 import { provideEffects } from '@ngrx/effects';
 import { StudentEffects } from './state/student/student.effects';
 import { provideRouterStore, routerReducer } from '@ngrx/router-store';
+import { MatNativeDateModule } from '@angular/material/core';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -24,6 +25,7 @@ export const appConfig: ApplicationConfig = {
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
     provideHttpClient(),
     provideEffects(),
-    provideRouterStore()
-]
+    provideRouterStore(),
+    importProvidersFrom(MatNativeDateModule)
+  ]
 };

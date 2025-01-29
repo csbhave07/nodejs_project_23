@@ -21,7 +21,7 @@ export class StudentTableComponent implements OnInit {
   searchControl: FormControl = new FormControl();
   store = inject(Store<AppState>)
   dataSource: any = [];
-  displayedColumns: string[] = ['name', 'city', 'country', 'subject', 'PassportDeclaration', 'FitnessDeclaration', 'phone', 'email', 'street', 'postalCode'];
+  displayedColumns: string[] = ['id','name', 'city', 'country', 'subject', 'PassportDeclaration', 'FitnessDeclaration', 'phone', 'email', 'street', 'postalCode'];
   dataSource$: Observable<IStudentRecords[]> = this.store.select(selectAllStudents);
 
   constructor() {

@@ -1,0 +1,85 @@
+<div class="container">
+
+    <mat-card>
+        <form [formGroup]="studentForm" (ngSubmit)="onFormSubmit()">
+            <div class="d-flex">
+                <div class="form-field">
+                    <label for="">Full Name</label>
+                    <div>
+                        <mat-form-field class="full-width">
+                            <mat-label>Full Name</mat-label>
+                            <input matInput type="text" formControlName="name" placeholder="Full Name">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label for="">Origin</label>
+                    <div>
+                        <mat-form-field class="full-width">
+                            <mat-label>Country</mat-label>
+                            <input matInput type="text" name="country" formControlName="country" placeholder="Country">
+                        </mat-form-field>
+                    </div>
+    
+                    <div>
+                        <mat-form-field class="full-width">
+                            <mat-label>State</mat-label>
+                            <input matInput type="text" name="state" formControlName="state" placeholder="State">
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex">
+                <div class="form-field">
+                    <label for="">Declaration</label>
+                    <div>
+                        <mat-form-field class="full-width">
+                            <mat-label>Passport</mat-label>
+                            <input matInput type="text" name="Passport" formControlName="passport"
+                                placeholder="Passport">
+                        </mat-form-field>
+                    </div>
+    
+                    <div>
+                        <mat-form-field class="full-width">
+                            <mat-label>Fitness</mat-label>
+                            <input matInput type="text" name="Fitness" formControlName="fitness" placeholder="Fitness">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label for="">Course Name</label>
+                    <div>
+                        <mat-form-field class="full-width">
+                            <mat-label>Course Name</mat-label>
+                            <input matInput type="text" name="Course" formControlName="course"
+                                placeholder="Course Name">
+                        </mat-form-field>
+                    </div>
+    
+                    <div>
+                        <mat-form-field class="full-width">
+                            <mat-label>Subject</mat-label>
+                            <input matInput type="text" name="Subject" formControlName="subject" placeholder="Subject">
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-field text-center">
+                <label for="">Date Of Birth</label>
+                <mat-form-field class="full-width">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-label>Date Of Birth</mat-label>
+                    <input matInput name="dob" [matDatepicker]="picker" formControlName="date" placeholder="Date Of Birth">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="input-actions text-center">
+                <button type="submit" mat-flat-button  [disabled]="studentForm.invalid">Submit</button>
+                <button type="button" color="accent" mat-button>Cancel</button>
+            </div>
+        </form>
+    </mat-card>
+</div>
